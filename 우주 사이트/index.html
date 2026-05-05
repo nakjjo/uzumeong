@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우주멍</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 로딩 화면 -->
+    <div id="loading-screen">
+        <!-- [수정] 사진이 글자 "바로 위"에 오도록 배치 -->
+        <div id="my-drawing-container">
+            <img src="blackhole.png" alt="내 그림" id="my-drawing">
+        </div>
+        <div id="main-message">우주를 불러오는 중...</div>
+        <div id="sub-message">우주에 뿌릴 별가루를 모으고 있어요</div>
+    </div>
+
+    <!-- 메인 뷰어 -->
+    <div id="universe-viewer">
+        <div id="background-layer"></div>
+        <div id="stars-container"></div>
+    </div>
+
+    <!-- [수정] 로딩 전에는 숨겨져 있을 UI 레이어 -->
+    <div class="ui-layer" id="ui-buttons" style="display: none;">
+        <div class="button-container">
+            <button onclick="playMusic('브금1.mp3')">배경음 1</button>
+            <button onclick="playMusic('브금2.mp3')">배경음 2</button>
+            <button onclick="playMusic('브금4.mp3')">배경음 3</button>
+            <button onclick="stopMusic()">끄기</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script><!-- 이용법 설명 팝업창 -->
+<div id="guide-popup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <h2>편안한 우주여행을 위한 우주멍 가이드</h2>
+        <ul>
+            <li><strong>드래그:</strong> 화면을 돌려 우주를 둘러보세요.</li>
+            <li><strong>별 클릭:</strong> 별의 정보를 확인할 수 있습니다.</li>
+            <li><strong>배경음:</strong> 하단의 배경음 버튼을 통해 우주여행과 함께 즐길 음악을 골라보세요.</li>
+        </ul>
+        <button onclick="closePopup()" class="close-btn">우주여행 시작하기</button>
+    </div>
+
+</div><!-- 이용법 설명 팝업창 -->
+<div id="guide-popup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <h2>편안한 우주여행을 위한 우주멍 가이드</h2>
+        <ul>
+             <li><strong>드래그:</strong> 화면을 돌려 우주를 둘러보세요.</li>
+            <li><strong>별 클릭:</strong> 별의 정보를 확인할 수 있습니다.</li>
+            <li><strong>배경음:</strong> 하단의 배경음 버튼을 통해 우주여행과 함께 즐길 음악을 골라보세요.</li>
+        </ul>
+        <button onclick="closePopup()" class="close-btn">우주여행 시작하기</button>
+    </div>
+</div>
+</body>
+</html>
