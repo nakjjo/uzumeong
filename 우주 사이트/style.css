@@ -1,4 +1,10 @@
-body, html { 
+body, #universe-viewer {
+    margin: 0;
+    overflow: hidden;
+    touch-action: none; /* 브라우저 기본 줌/스크롤 방지 */
+    -webkit-user-select: none; /* 텍스트 선택 방지 */
+}
+html { 
     margin: 0; padding: 0; width: 100%; height: 100%; 
     overflow: hidden; background-color: #000; color: white; font-family: sans-serif; 
 }
