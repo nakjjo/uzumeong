@@ -9,8 +9,11 @@ window.onload = function() {
     setRandomBackground();
     init3DUniverse();
     // 3초 뒤 로딩 해제 (시간은 자유롭게 조절하세요)
-    setTimeout(removeLoading, 3000);
+    setTimeout(removeLoading, 2500);
 };
+
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 function setRandomBackground() {
     const bgLayer = document.getElementById('background-layer');
@@ -66,9 +69,7 @@ const mainStars = [
     { name: '카펠라', x: 500, y: -2500, z: -1400, color: '#fffacd', info: '마차부자리의 별입니다. "작은 암염소"라는 뜻을 가졌으며, 실제로는 네 개의 별이 모여 있는 시스템입니다.' },
     { name: '폴룩스', x: -1800, y: 1200, z: -1000, color: '#ffd700', info: '쌍둥이자리 중 동생의 머리에 해당합니다. 형인 카스토르보다 조금 더 오렌지색을 띠고 있어요.' },
     { name: '카스토르', x: -2000, y: 1350, z: -950, color: '#f8f8ff', info: '쌍둥이자리 중 형의 머리 별입니다. 실제로는 6개의 별이 서로 복잡하게 돌고 있는 다중성계입니다.' },
-    { name: '레굴루스', x: 900, y: -400, z: -1200, color: '#f0f8ff', info: '사자자리의 심장 별입니다. 황도 바로 위에 있어서 고대부터 왕을 상징하는 중요한 별로 여겨졌습니다.' },
     { name: '알데바란', x: -1500, y: -800, z: -2000, color: '#fa8072', info: '황소자리의 붉은 눈입니다. 플레이아데스 성단을 뒤쫓아가는 모습 때문에 "뒤따르는 자"라는 뜻이 있어요.' },
-    { name: '프로키온', x: -1100, y: 200, z: -1400, color: '#fafad2', info: '작은개자리의 별입니다. 시리우스보다 아주 조금 먼저 떠오르기 때문에 "개보다 먼저"라는 이름이 붙었습니다.' },
     { name: '알비레오', x: 2100, y: 500, z: -1900, color: '#ffd700', info: '백조자리의 머리 별입니다. 망원경으로 보면 금색과 푸른색 별이 나란히 붙어 있는 가장 아름다운 이중성입니다.' },
     { name: '게 성운 (M1)', x: -800, y: -1800, z: -3000, color: '#00ced1', info: '1054년에 폭발한 초신성의 잔해입니다. 폭발 당시에는 낮에도 보일 정도로 밝았다고 해요.' },
     { name: '말머리 성운', x: 550, y: 850, z: -1700, color: '#4b0082', info: '모양이 말 머리를 닮아 유명한 암흑 성운입니다. 오리온자리의 삼태성 근처에 숨어 있습니다.' },
